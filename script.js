@@ -129,3 +129,51 @@ document.getElementById("secretResetBtn").addEventListener("click", () => {
     location.reload();
   }
 });
+
+
+
+// -------------------------
+// BLOCK SCREENSHOT FEATURE
+// -------------------------
+
+// Block PrintScreen (PrtSc)
+document.addEventListener("keydown", function (e) {
+  if (e.key === "PrintScreen") {
+    navigator.clipboard.writeText("");
+    alert("Screenshots are disabled for this exam.");
+  }
+
+  // Block Windows screenshot shortcuts
+  if (e.ctrlKey && e.shiftKey && (e.key === "S" || e.key === "s")) {
+    e.preventDefault();
+    alert("Screenshots are disabled for this exam.");
+  }
+});
+
+// Try to clear screenshot clipboard every 500ms
+setInterval(() => {
+  navigator.clipboard.writeText("");
+}, 500);
+
+// Detect suspicious visibility change (screenshot tools)
+document.addEventListener("visibilitychange", () => {
+  if (document.visibilityState === "hidden") {
+    // Optional: blur screen on suspected screenshot
+    document.body.style.filter = "blur(10px)";
+  } else {
+    document.body.style.filter = "none";
+  }
+});
+
+// Block developer tools shortcuts (users use it for capturing)
+document.addEventListener("keydown", (e) => {
+  if (
+    e.key === "F12" ||
+    (e.ctrlKey && e.shiftKey && e.key === "I") ||
+    (e.ctrlKey && e.shiftKey && e.key === "C") ||
+    (e.ctrlKey && e.shiftKey && e.key === "J")
+  ) {
+    e.preventDefault();
+    alert("Developer tools are disabled during the exam.");
+  }
+});
