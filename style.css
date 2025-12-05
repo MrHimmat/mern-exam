@@ -203,3 +203,9 @@ h3 {
     cursor: pointer;
     z-index: 9999;
 }
+
+
+.blur {
+  filter: blur(6px);
+  pointer-events: none; /* prevent clicking before start */
+}

@@ -7,7 +7,9 @@ const startBtn = document.getElementById("startBtn");
 const questions = document.getElementById("questions-container");
 const timeUpModal = document.getElementById("timeUpModal");
 
-// On page load
+// -------------------------
+// On Page Load
+// -------------------------
 window.onload = function () {
   const examStartTime = localStorage.getItem("examStartTime");
   const examFinished = localStorage.getItem("examFinished");
@@ -18,8 +20,10 @@ window.onload = function () {
     return;
   }
 
-  // If exam started earlier
+  // If exam started earlier → continue exam
   if (examStartTime) {
+    removeBlur(); // 🔥 important: no blur on reload
+
     const timePassed = Math.floor((Date.now() - examStartTime) / 1000);
     let remaining = totalExamSeconds - timePassed;
 
@@ -34,32 +38,48 @@ window.onload = function () {
   }
 };
 
-// Start exam
+// -------------------------
+// Start Exam
+// -------------------------
 startBtn.addEventListener("click", () => {
+  removeBlur();
+
   if (!localStorage.getItem("examStartTime")) {
     localStorage.setItem("examStartTime", Date.now());
   }
+
   startBtn.disabled = true;
   startTimer();
 });
 
+// -------------------------
+// Remove blur function
+// -------------------------
+function removeBlur() {
+  questions.classList.remove("blur");
+}
+
+// -------------------------
 // Start countdown
+// -------------------------
 function startTimer() {
   timerInterval = setInterval(updateTimer, 1000);
 }
 
-// Update timer each second
+// -------------------------
+// Update timer
+// -------------------------
 function updateTimer() {
   let hours = Math.floor(totalExamSeconds / 3600);
   let minutes = Math.floor((totalExamSeconds % 3600) / 60);
   let seconds = totalExamSeconds % 60;
 
-  timerEl.textContent = 
+  timerEl.textContent =
     `${String(hours).padStart(2, "0")}:` +
     `${String(minutes).padStart(2, "0")}:` +
     `${String(seconds).padStart(2, "0")}`;
 
-  // Warning at 10 minutes
+  // 10-minute warning
   if (totalExamSeconds === 10 * 60 && !warningShown) {
     warningShown = true;
     alert("⚠️ Only 10 minutes left!");
@@ -69,33 +89,38 @@ function updateTimer() {
   if (totalExamSeconds <= 0) {
     clearInterval(timerInterval);
     endExam();
+    return;
   }
 
   totalExamSeconds--;
 }
 
+// -------------------------
 // When time finishes
+// -------------------------
 function endExam() {
   localStorage.setItem("examFinished", "true");
   lockExam();
 }
 
+// -------------------------
 // Lock exam permanently
+// -------------------------
 function lockExam() {
   questions.style.display = "none";
   timeUpModal.style.display = "flex";
 
   startBtn.disabled = true;
 
-  // Prevent timer display confusion
   timerEl.textContent = "00:00:00";
 
-  // Remove start time so timer doesn't restart
+  // Remove start time so exam doesn't restart
   localStorage.removeItem("examStartTime");
 }
 
-
-// Secret Reset Button (Admin Only)
+// -------------------------
+// Secret Reset Button
+// -------------------------
 document.getElementById("secretResetBtn").addEventListener("click", () => {
   const confirmReset = confirm("Are you sure? This will reset the exam.");
   if (confirmReset) {
