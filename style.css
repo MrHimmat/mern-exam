@@ -1,27 +1,13 @@
-/* Block screen recording (partial) */
-* {
-  -webkit-user-select: none;
-  user-select: none;
-}
 
 body {
   background: #fff;
   transition: filter 0.3s ease;
-  -webkit-user-select: none !important;
-  user-select: none !important;
   font-family: "Segoe UI", Arial, sans-serif;
   background: #eef1f5;
   margin: 0;
   padding: 40px 0;
 }
 
-/* Prevent iOS screenshot overlays */
-html,
-body {
-  -webkit-touch-callout: none !important;
-  -webkit-user-select: none !important;
-  -webkit-tap-highlight-color: transparent;
-}
 
 /* Paper Container */
 .paper {
