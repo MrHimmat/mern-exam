@@ -177,3 +177,87 @@ document.addEventListener("keydown", (e) => {
     alert("Developer tools are disabled during the exam.");
   }
 });
+
+
+// --------------------------------------------
+// BLOCK SCREENSHOTS (Desktop + Mobile MAX)
+// --------------------------------------------
+
+// Disable long press save / screenshot helpers
+document.addEventListener("contextmenu", (e) => e.preventDefault());
+document.addEventListener("touchstart", (e) => {
+  if (e.touches.length > 1) e.preventDefault();
+}, { passive: false });
+
+document.addEventListener("gesturestart", (e) => e.preventDefault());
+
+
+// Detect mobile screenshot via visibility change
+document.addEventListener("visibilitychange", function () {
+  if (document.visibilityState === "hidden") {
+    blurScreen();
+  } else {
+    unblurScreen();
+  }
+});
+
+function blurScreen() {
+  document.body.style.filter = "blur(25px)";
+}
+
+function unblurScreen() {
+  document.body.style.filter = "none";
+}
+
+
+// Block PrintScreen (Desktop)
+document.addEventListener("keydown", function (e) {
+  if (e.key === "PrintScreen") {
+    navigator.clipboard.writeText("");
+    alert("Screenshots are disabled during the exam.");
+  }
+});
+
+// Clear clipboard continuously
+setInterval(() => {
+  navigator.clipboard.writeText("");
+}, 500);
+
+
+// Block dev tools screenshots
+document.addEventListener("keydown", (e) => {
+  if (
+    e.key === "F12" ||
+    (e.ctrlKey && e.shiftKey && e.key === "I") ||
+    (e.ctrlKey && e.shiftKey && e.key === "C") ||
+    (e.ctrlKey && e.shiftKey && e.key === "J")
+  ) {
+    e.preventDefault();
+    alert("Developer tools are disabled during the exam.");
+  }
+});
+
+// Detect mobile screen recording attempt
+setInterval(() => {
+  if (window.screen.height !== document.documentElement.clientHeight) {
+    blurScreen();
+  }
+}, 1000);
+
+
+// Prevent built-in browser capture (Android)
+document.addEventListener("keydown", (e) => {
+  // Android screenshot shortcut
+  if (e.key === "VolumeDown" || e.key === "Power") {
+    blurScreen();
+  }
+});
+
+// Detect Mobile Screen Recorder (experimental)
+let originalTitle = document.title;
+setInterval(() => {
+  if (document.title !== originalTitle) {
+    blurScreen();
+  }
+}, 1500);
+
