@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Web Development Exam - HTML, CSS & JavaScript</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="paper">
+      <!-- Logo Section -->
+      <div class="logo-container">
+        <img src="logo.png" alt="Institute Logo" />
+
+        <div class="title">
+          <h1>Hash Programming, Coding Classes</h1>
+          <div class="inner-title">
+            <h2>Web Development Exam</h2>
+            <h2>HTML + CSS + JavaScript</h2>
+          </div>
+        </div>
+
+        <div class="last">
+          <h3>Total Marks: 100</h3>
+          <h3>Time: 3 Hours</h3>
+        </div>
+      </div>
+
+      <!-- Exam Controls -->
+      <div class="exam-controls">
+        <button id="startBtn">Start Exam</button>
+        <div id="timer">03:00:00</div>
+      </div>
+
+      <!-- Time Up Modal -->
+      <div id="timeUpModal" class="modal">
+        <div class="modal-content">
+          <h2>⏳ Time's Up!</h2>
+          <p>Your exam time has finished.</p>
+        </div>
+      </div>
+
+      <!-- ALL QUESTIONS WRAPPED -->
+      <div id="questions-container">
+        <!-- HTML SECTION -->
+        <div>
+          <div class="section-title">SECTION A – HTML (15 Marks)</div>
+
+          <div
+            class="question"
+            style="color: rgb(8, 138, 193); font-weight: 900"
+          >
+            Q1. Multiple Choice Questions (3 × 1 = 3 marks)
+          </div>
+
+          <div class="question">
+            1. Which tag is used to create a hyperlink?<br />
+            (a) &lt;link&gt; &nbsp;&nbsp; (b) &lt;a&gt; &nbsp;&nbsp; (c)
+            &lt;href&gt; &nbsp;&nbsp; (d) &lt;hyper&gt;
+          </div>
+
+          <div class="question">
+            2. Which attribute is used to merge columns in a table?<br />
+            (a) rowspan &nbsp;&nbsp; (b) colspan &nbsp;&nbsp; (c) merge
+            &nbsp;&nbsp; (d) span
+          </div>
+
+          <div class="question">
+            3. The correct way to embed a YouTube video is:<br />
+            (a) &lt;video&gt; &lt;/video&gt;<br />
+            (b) &lt;youtube&gt; &lt;/youtube&gt;<br />
+            (c) &lt;iframe&gt; &lt;/iframe&gt;<br />
+            (d) &lt;embed&gt; &lt;/embed&gt;
+          </div>
+
+          <div
+            class="question"
+            style="color: rgb(8, 138, 193); font-weight: 900"
+          >
+            Q2. Short Answer Questions (5 × 1 = 5 marks)
+          </div>
+
+          <div class="question">
+            1. What is the difference between Absolute and Relative URLs?
+          </div>
+
+          <div class="question">
+            2. Explain Semantic and Non-Semantic tags with examples.
+          </div>
+
+          <div class="question">
+            3. What is the purpose of the alt attribute in the &lt;img&gt; tag?
+          </div>
+
+          <div class="question">
+            4. What is difference between inline and block elements?
+          </div>
+
+          <div class="question">5. define the list and its types.</div>
+
+          <div class="question">
+            <p style="color: rgb(8, 138, 193); font-weight: 900">
+              Q3. Practical Question (1 × 7 = 7 marks)
+            </p>
+            Create a complete HTML webpage using proper semantic structure. Your
+            page must include:
+            <br />• A navigation bar using the &lt;nav&gt; tag with 3 links
+            <br />• An internal link (href="#about") that jumps to an “About”
+            section <br />• An image with proper alt text <br />• An About
+            section using &lt;section&gt; <br />• A table with a header row
+            containing the following columns: Skill, Level, Experience <br />• A
+            contact form containing Name, Email, Password, and a Submit button
+            <br />Write the full HTML code.
+          </div>
+        </div>
+
+        <!-- CSS SECTION -->
+        <div>
+          <div class="section-title">SECTION B – CSS (15 Marks)</div>
+
+          <div
+            class="question"
+            style="color: rgb(8, 138, 193); font-weight: 900"
+          >
+            Q3. Multiple Choice Questions (3 × 1 = 3 marks)
+          </div>
+
+          <div class="question">
+            1. Which selector has the highest specificity?<br />
+            (a) Element Selector &nbsp; (b) Class Selector &nbsp; (c) ID
+            Selector &nbsp; (d) Universal Selector (*)
+          </div>
+
+          <div class="question">
+            2. Which unit is relative to the width of the viewport?<br />
+            (a) em &nbsp; (b) rem &nbsp; (c) vw &nbsp; (d) px
+          </div>
+
+          <div class="question">
+            3. Which CSS property is used to control the layout direction in
+            flexbox?<br />
+            (a) align-items &nbsp; (b) justify-content &nbsp; (c) flex-direction
+            &nbsp; (d) display
+          </div>
+
+          <div
+            class="question"
+            style="color: rgb(8, 138, 193); font-weight: 900"
+          >
+            Q4. Long Answer Question (1 × 7 = 7 marks)
+          </div>
+
+          <div class="question">
+            1. What is the purpose of the CSS selector?
+          </div>
+
+          <div class="question">
+            2. What is the specificity hierarchy in CSS?
+          </div>
+
+          <div class="question">
+            3. explain the box model in detail, use diagram representation?
+          </div>
+
+          <div class="question">
+            4. What is the use of display: flex in CSS?
+          </div>
+
+          <div class="question">5. What does z-index control?</div>
+
+          <div class="question">
+            6. What is the difference between px, %, em, and rem units?
+          </div>
+
+          <div class="question">7. What does the :hover pseudo-class do?</div>
+
+          <div class="question">
+            <p style="color: rgb(8, 138, 193); font-weight: 900">
+              Q5. Practical Question (1 × 5 = 5 marks)
+            </p>
+            Write CSS to create a responsive box:<br />
+            - Width: 300px<br />
+            - Height: 200px<br />
+            - Light gray background<br />
+            - Center the box using flexbox<br />
+            - On hover → scale the box slightly using transform<br />
+            - Add a smooth transition effect
+          </div>
+        </div>
+
+
+
+        <!-- JS SECTION -->
+        <div>
+            <div class="section-title">SECTION C – JavaScript (70 Marks)</div>
+            <div class="section-title">SECTION A – MCQs (10 Marks)</div>
+
+              <div class="question">
+              1. What will this output?<br>
+              console.log(typeof NaN);<br>
+              (a) number (b) undefined (c) NaN (d) object
+              </div>
+
+              <div class="question">
+              2. What will be the output of this code?<br>
+                console.log([] == ![]);<br>
+                (a) true &nbsp; (b) false &nbsp; (c) undefined &nbsp; (d) TypeError
+
+              </div>
+
+              <div class="question">
+              3. Which loop executes at least once?<br>
+              (a) for <br>(b) while <br>(c) do-while <br>(d) none
+              </div>
+
+              <div class="question">
+              4. What does array.filter() return?<br>
+              (a) boolean <br>(b) new filtered array <br>(c) original array <br>(d) object
+              </div>
+
+              <div class="question">
+              5. What does call() do?<br>
+              (a) Binds this permanently <br>(b) Calls function with this and arguments <br>(c) Creates copy <br>(d) None
+              </div>
+
+              <div class="question">
+              6. JSON.stringify() converts JS object into:<br>
+              (a) Array <br>(b) Number <br>(c) String <br>(d) Object
+              </div>
+
+              <div class="question">
+              7. Which method adds element at the beginning?<br>
+              (a) push <br>(b) unshift <br>(c) shift <br>(d) append
+              </div>
+
+              <div class="question">
+              8. Which method is used to add an event listener in modern JavaScript?<br>
+              (a) addEvent()<br>
+              (b) onEvent()<br>
+              (c) addEventListener()<br>
+              (d) eventListener()
+
+              </div>
+
+              <div class="question">
+              9. What does the .then() method of a Promise handle?<br>
+              (a) Errors only<br>
+              (b) Success/Resolved value<br>
+              (c) Both success and errors<br>
+              (d) It cancels the promise
+
+              </div>
+
+              <div class="question">
+              10. localStorage stores data:<br>
+              (a) Only until tab closes<br>(b) Only until browser closes<br>(c) Permanently until removed<br>(d) For 24 hours
+              </div>
+
+
+              <!-- theory -->
+               <div class="section-title">SECTION B – Basic Theory (10 Marks)</div>
+
+                <div class="question">1. What is the difference between == and === in JavaScript? (2 marks)</div>
+
+                <div class="question">2. Explain the difference between var, let, and const. (2 marks)</div>
+
+                <div class="question">3. What is a Higher-Order Function? Give an example. (2 marks)</div>
+
+                <div class="question">4. Explain call(), apply(), and bind() with examples. (2 marks)</div>
+
+                <div class="question">5. What is the DOM? List four DOM selection methods. (2 marks)</div>
+
+                <!-- logical -->
+                <div class="section-title">SECTION C – Logical Coding Questions (20 Marks)</div>
+
+                <div class="question">
+                1. Write a program to check if a number is prime or not. (4 marks)
+                </div>
+
+                <div class="question">
+                2. Reverse an array without using reverse(). (4 marks)
+                </div>
+
+                <div class="question">
+                3. Write a program to count vowels in a string. (4 marks)
+                </div>
+
+                <div class="question">
+                4. Write a program using switch-case to print the day of the week, based on day. (4 marks)
+                </div>
+
+                <div class="question">
+                5. Write a program that prints numbers from 1 to 50 but skips multiples of 5 using continue. (4 marks)
+                </div>
+
+                <div class="section-title">SECTION D – Functions, Arrays & Objects (20 Marks)</div>
+
+
+
+                <div class="question">
+                1. Write a function that returns the sum of all numbers in an array. (4 marks)
+                </div>
+
+                <div class="question">
+                2. Create an object "student" with name, age, marks. Display values using dot and bracket notation. (4 marks)
+                </div>
+
+                <div class="question">
+                3. Write an arrow function that takes two parameters and returns the bigger number. (4 marks)
+                </div>
+
+                <div class="question">
+                4. Explain array map(), filter(), reduce() with one example each. (4 marks)
+                </div>
+
+                <div class="question">
+                5. Write an example of a constructor function that creates person objects. (4 marks)
+                </div>
+
+
+
+                <div class="section-title">SECTION E – Promises, Async/Await, JSON, LocalStorage, DOM (10 Marks)</div>
+
+                <div class="question">
+                1. What is a Promise? Write an example of then() and catch(). (3 marks)
+                </div>
+
+                <div class="question">
+                2. Convert this Promise code into async/await: (3 marks)<br>
+                fetch("data.json").then(res => res.json()).then(data => console.log(data));
+                </div>
+
+                <div class="question">
+                3. Store a user object {name: "Ajay", age: 22} in localStorage and retrieve it. (2 marks)
+                </div>
+
+                <div class="question">
+                4. Write JavaScript to create a new &lt;li&gt; element and append it into an existing &lt;ul&gt;. (2 marks)
+                </div>
+
+
+
+        </div>
+
+      
+      <!-- end uestions container -->
+    </div>
+    <!-- end paper -->
+    <button id="secretResetBtn"></button>
+    <script src="script.js"></script>
+  </body>
+</html>
